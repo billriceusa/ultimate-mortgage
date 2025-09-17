@@ -1,3 +1,4 @@
+import { Header } from '@/components/Header'
 import { Hero } from '@/components/Hero'
 import { RateProofRow } from '@/components/RateProofRow'
 import { CalculatorPreview } from '@/components/CalculatorPreview'
@@ -8,14 +9,17 @@ import { Footer } from '@/components/Footer'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-ui-bg">
-      <Hero />
-      <RateProofRow />
-      <CalculatorPreview />
-      <ValueProps />
-      <CredibilityStrip />
-      <GuideDownload />
+    <div className="min-h-screen bg-ui-bg">
+      <Header />
+      <main>
+        <Hero />
+        <RateProofRow />
+        <CalculatorPreview />
+        <ValueProps />
+        <CredibilityStrip />
+        <GuideDownload />
+      </main>
       <Footer />
-    </main>
+    </div>
   )
 }

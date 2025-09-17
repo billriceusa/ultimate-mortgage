@@ -7,49 +7,56 @@ export function Hero() {
   return (
     <section className="relative bg-ui-bg overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+        <div className="grid lg:grid-cols-12 gap-12 items-center min-h-[80vh] py-20">
           {/* Content */}
-          <div className="space-y-8">
+          <div className="lg:col-span-7 space-y-8">
             <div className="space-y-6">
               <h1 className="text-h1 font-display text-text-primary leading-tight">
-                A better way to your best mortgage
+                Mortgage <span className="text-brand-primary">solutions.</span>
               </h1>
-              <p className="text-body text-text-secondary max-w-lg">
-                Transparent pricing. Fast approvals. Human loan experts.
+              <p className="text-xl text-text-secondary max-w-2xl leading-relaxed">
+                Lightning-fast application. Dedicated mortgage expert. Get a home loan you'll actually love.
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="primary" size="large">
-                Get my payment
-              </Button>
-              <Button variant="secondary" size="large">
-                Talk to a loan expert
+              <Button variant="primary" size="large" className="text-lg px-8">
+                Explore Your Options →
               </Button>
             </div>
             
-            <div className="flex items-center space-x-4 text-small text-text-muted">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-state-success rounded-full mr-2"></div>
-                No impact to credit score
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-state-success rounded-full mr-2"></div>
-                Takes 2 minutes
-              </div>
+            <div className="flex items-center space-x-1 text-small text-state-success">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span>No-impact credit check. No commitment.</span>
             </div>
           </div>
           
-          {/* Hero Image */}
-          <div className="relative">
-            <div className="aspect-[16/9] relative rounded-md overflow-hidden">
-              <Image
-                src="/img/getty-images-UJan77XrT6Q-unsplash.jpg"
-                alt="Couple sharing pizza on the floor of their new home with boxes around them"
-                fill
-                className="object-cover"
-                priority
-              />
+          {/* Right Side - Pathway Cards */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="bg-ui-surface rounded-lg border border-ui-border p-6 card-hover">
+              <h3 className="text-xl font-semibold text-text-primary mb-3">Get cash from your home.</h3>
+              <p className="text-text-secondary mb-4">Take cash out or get a HELOC to pay for whatever you need.</p>
+              <Button variant="secondary" size="medium" className="border-brand-primary text-brand-primary">
+                Get Cash →
+              </Button>
+            </div>
+            
+            <div className="bg-ui-surface rounded-lg border border-ui-border p-6 card-hover">
+              <h3 className="text-xl font-semibold text-text-primary mb-3">Refinance.</h3>
+              <p className="text-text-secondary mb-4">Lower your payments and adjust loan terms. We'll find the right fit.</p>
+              <Button variant="secondary" size="medium" className="border-brand-primary text-brand-primary">
+                Lower my payment →
+              </Button>
+            </div>
+            
+            <div className="bg-ui-surface rounded-lg border border-ui-border p-6 card-hover">
+              <h3 className="text-xl font-semibold text-text-primary mb-3">Buy a home.</h3>
+              <p className="text-text-secondary mb-4">The process is simple. Get the home of your dreams without the hassle.</p>
+              <Button variant="secondary" size="medium" className="border-brand-primary text-brand-primary">
+                See if I qualify →
+              </Button>
             </div>
           </div>
         </div>
