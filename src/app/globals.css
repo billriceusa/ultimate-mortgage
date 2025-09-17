@@ -1,83 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS Variables for Design System */
-:root {
-  /* Brand */
-  --brand-primary: #C60904;
-  --brand-onPrimary: #fff;
-  --brand-secondary: #3982BB;
-  --brand-onSecondary: #fff;
+@layer base {
+  :root {
+    /* Font Variables */
+    --font-display: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-accent: 'Inter', system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-body text-text-primary bg-ui-bg;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold text-text-primary;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  h1 {
+    @apply text-display-xl;
+  }
+
+  h2 {
+    @apply text-display-lg;
+  }
+
+  h3 {
+    @apply text-display-md;
+  }
+
+  p {
+    @apply text-body-base text-text-secondary;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brand-secondary ring-offset-2;
+  }
+
+  /* Remove default button styles */
+  button {
+    @apply focus:outline-none;
+  }
+}
+
+@layer components {
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 ease-smooth;
+  }
   
-  /* Surfaces */
-  --bg: #fff;
-  --surface: #fff;
-  --surface-alt: #E1E4DD;
-  --surface-info: #BADCF1;
-  --border: #E5E7EB;
-  --divider: #E5E7EB;
+  .card-hover:hover {
+    @apply shadow-hover -translate-y-1;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-smooth;
+  }
+
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
   
-  /* Text */
-  --text: #000;
-  --text-2: #333;
-  --text-muted: #6B7280;
-  --link: #3982BB;
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
   
-  /* States */
-  --success: #16A34A;
-  --warning: #FFC931;
-  --error: #C60904;
-  --info: #3982BB;
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
   
-  /* Radii */
-  --r-xs: 12px;
-  --r-sm: 16px;
-  --r-md: 24px;
-  --r-lg: 32px;
-  
-  /* Shadows */
-  --sh-sm: 0 1px 2px rgba(0,0,0,.06);
-  --sh-md: 0 6px 16px rgba(0,0,0,.08);
-  --sh-lg: 0 16px 32px rgba(0,0,0,.1);
-}
-
-/* Base styles */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Montserrat', system-ui, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Arboria', 'Outfit', 'Poppins', system-ui, sans-serif;
-}
-
-.font-accent {
-  font-family: 'Filmotype Lucky', 'Grandstander', cursive;
-}
-
-/* Focus styles for accessibility */
-*:focus {
-  outline: 2px solid var(--brand-secondary);
-  outline-offset: 2px;
-}
-
-/* Button hover effects */
-.btn-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--sh-md);
-  transition: all 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-/* Card hover effects */
-.card-hover:hover {
-  box-shadow: var(--sh-lg);
-  transform: translateY(-2px);
-  transition: all 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
 }
