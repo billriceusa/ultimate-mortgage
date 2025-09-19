@@ -1,6 +1,10 @@
 import { Header } from '@/components/Header'
 import { Hero } from '@/components/Hero'
 import { RateProofRow } from '@/components/RateProofRow'
+import { GoalsSelector } from '@/components/GoalsSelector'
+import { HowItWorks } from '@/components/HowItWorks'
+import { LearningCenter } from '@/components/LearningCenter'
+import { ContactPrompt } from '@/components/ContactPrompt'
 import { CalculatorPreview } from '@/components/CalculatorPreview'
 import { ValueProps } from '@/components/ValueProps'
 import { CredibilityStrip } from '@/components/CredibilityStrip'
@@ -14,10 +18,14 @@ export default function HomePage() {
       <main>
         <Hero />
         <RateProofRow />
+        <GoalsSelector />
+        <HowItWorks />
+        <LearningCenter />
         <CalculatorPreview />
         <ValueProps />
         <CredibilityStrip />
         <GuideDownload />
+        <ContactPrompt />
       </main>
       <Footer />
     </div>

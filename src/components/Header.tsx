@@ -1,12 +1,25 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from './ui/Button'
+import { Logo } from './ui/Logo'
+import { useRouter } from 'next/navigation'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const router = useRouter()
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 8)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const loanPrograms = [
     { name: 'Conventional Loan', href: '/loan-programs/conventional' },
@@ -27,40 +40,25 @@ export function Header() {
   ]
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      {/* Trust Bar */}
-      <div className="bg-gray-50Alt py-2">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-6 text-sm">
-            <div className="flex items-center space-x-2">
-              <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
-              <span className="text-gray-600">15,000+ Five-Star Reviews</span>
-            </div>
-            <div className="hidden md:block text-gray-500">|</div>
-            <div className="hidden md:flex items-center space-x-2">
-              <span className="text-gray-600">"Exceptional service"</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <header className={
+      `sticky top-0 z-50 transition-all ${
+        isScrolled 
+          ? 'bg-white/95 border-b border-gray-200 shadow-sm' 
+          : 'bg-white border-b border-gray-200'
+      }`
+    }>
       {/* Main Navigation */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
-              <div className="text-2xl font-sans font-bold text-brand-primary">
-                Ultimate
-              </div>
-              <div className="text-2xl font-sans font-bold text-gray-900 ml-1">
-                Mortgage
-              </div>
+            <Link href="/" className="flex items-center" aria-label="Ultimate Mortgage home">
+              <Logo size="sm" />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {/* Loan Programs Dropdown */}
             <div className="relative group">
               <button className="flex items-center text-gray-900 hover:text-brand-primary transition-colors">
@@ -125,19 +123,14 @@ export function Header() {
           </div>
 
           {/* Right Side CTAs */}
-          <div className="flex items-center space-x-4">
-            <div className="hidden md:flex items-center space-x-4">
-              <div className="flex items-center text-gray-600">
-                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span className="text-sm">24/7: 1-800-555-0123</span>
-              </div>
-              <Button variant="secondary" size="md">
-                Talk to a loan expert
+          <div className="flex items-center space-x-3">
+            <div className="hidden lg:flex items-center space-x-4">
+              <span className="text-sm text-gray-600">Call: (614) 361-7558</span>
+              <Button variant="secondary" size="md" onClick={() => router.push('/contact')}>
+                Talk to Expert
               </Button>
             </div>
-            <Button variant="primary" size="md">
+            <Button variant="primary" size="md" onClick={() => router.push('/apply')}>
               Apply Now
             </Button>
 
@@ -145,6 +138,9 @@ export function Header() {
             <button
               className="lg:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -155,7 +151,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200">
+          <div id="mobile-menu" className="lg:hidden border-t border-gray-200" role="navigation" aria-label="Mobile">
             <div className="py-4 space-y-4">
               <div>
                 <div className="font-semibold text-gray-900 mb-2">Loan Programs</div>
@@ -182,10 +178,10 @@ export function Header() {
               </Link>
               <div className="pt-4 border-t border-gray-200">
                 <div className="space-y-3">
-                  <Button variant="secondary" className="w-full">
+                  <Button variant="secondary" className="w-full" onClick={() => { setIsMenuOpen(false); router.push('/contact') }}>
                     Talk to a loan expert
                   </Button>
-                  <Button variant="primary" className="w-full">
+                  <Button variant="primary" className="w-full" onClick={() => { setIsMenuOpen(false); router.push('/apply') }}>
                     Apply Now
                   </Button>
                 </div>

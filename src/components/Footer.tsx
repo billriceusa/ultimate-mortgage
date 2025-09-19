@@ -1,21 +1,17 @@
 import Link from 'next/link'
+import { Logo } from './ui/Logo'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-text-primary text-ui-bg">
+    <footer className="bg-text-primary text-ui-bg" role="contentinfo" aria-label="Footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center mb-4">
-              <div className="text-2xl font-sans font-bold text-brand-primary">
-                Ultimate
-              </div>
-              <div className="text-2xl font-sans font-bold text-ui-bg ml-1">
-                Mortgage Brokers
-              </div>
+            <div className="mb-4">
+              <Logo size="lg" className="[&_span:last-child]:text-white" />
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               Making homeownership accessible with transparent pricing and expert guidance.
@@ -97,7 +93,7 @@ export function Footer() {
               Connecticut – MORTGAGE BROKER ONLY, NOT A MORTGAGE LENDER OR MORTGAGE CORRESPONDENT LENDER.
             </p>
             
-            <div className="flex flex-wrap gap-4 text-xs pt-4 border-t border-gray-700">
+            <div className="flex flex-wrap gap-4 text-xs pt-4 border-t border-gray-700" aria-label="Legal links">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-gray-300">Privacy Policy</Link>
               <Link href="/terms-of-use" className="text-gray-400 hover:text-gray-300">Terms of Use</Link>
               <Link href="/licensing" className="text-gray-400 hover:text-gray-300">Licensing</Link>

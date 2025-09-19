@@ -1,0 +1,10 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Official Ultimate Mortgage house icon for favicon -->
+  <rect width="100" height="100" fill="white"/>
+  <!-- Red house shape -->
+  <path d="M50 15L20 40V85H35V60H65V85H80V40L50 15Z" fill="#C60904"/>
+  <!-- Roof peak -->
+  <path d="M50 15L80 40H85L50 10L15 40H20L50 15Z" fill="#C60904"/>
+  <!-- Chimney -->
+  <rect x="65" y="25" width="8" height="20" fill="#C60904"/>
+</svg>
