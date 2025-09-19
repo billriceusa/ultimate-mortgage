@@ -24,13 +24,13 @@ export function CredibilityStrip() {
   ]
 
   return (
-    <section className="py-16 bg-ui-surface border-t border-ui-border">
+    <section className="py-16 bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-h2 font-display text-text-primary mb-4">
+          <h2 className="text-display-md font-bold text-gray-900 mb-4">
             What our customers say
           </h2>
-          <p className="text-text-secondary">
+          <p className="text-gray-600">
             Real stories from real families who found their perfect mortgage with us
           </p>
         </div>
@@ -38,7 +38,7 @@ export function CredibilityStrip() {
         {/* Customer Reviews */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-ui-bg rounded-lg border border-ui-border p-8">
+            <div key={index} className="bg-white rounded-lg border border-gray-200 p-8">
               <div className="flex items-center mb-4">
                 <span className="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</span>
               </div>
@@ -56,15 +56,15 @@ export function CredibilityStrip() {
                 </div>
                 
                 <div className="flex-grow">
-                  <blockquote className="text-text-secondary italic mb-4 leading-relaxed">
+                  <blockquote className="text-gray-600 italic mb-4 leading-relaxed">
                     "{testimonial.text}"
                   </blockquote>
                   
                   <div>
-                    <div className="font-semibold text-text-primary">
+                    <div className="font-semibold text-gray-900">
                       {testimonial.author}
                     </div>
-                    <div className="text-text-muted text-small">
+                    <div className="text-gray-500 text-sm">
                       {testimonial.location}
                     </div>
                   </div>
@@ -75,11 +75,11 @@ export function CredibilityStrip() {
         </div>
         
         {/* Review Stats */}
-        <div className="border-t border-ui-border pt-12">
+        <div className="border-t border-gray-200 pt-12">
           <div className="text-center mb-8">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <span className="text-yellow-500 text-3xl">⭐⭐⭐⭐⭐</span>
-              <span className="text-2xl font-bold text-text-primary">15,000+ Five-Star Reviews</span>
+              <span className="text-2xl font-bold text-gray-900">15,000+ Five-Star Reviews</span>
             </div>
           </div>
           
@@ -90,10 +90,10 @@ export function CredibilityStrip() {
                 <div className="font-bold text-brand-primary text-xl mb-1">
                   {marker.rating}
                 </div>
-                <div className="font-semibold text-text-primary mb-1">
+                <div className="font-semibold text-gray-900 mb-1">
                   {marker.name}
                 </div>
-                <div className="text-small text-text-muted">
+                <div className="text-sm text-gray-500">
                   {marker.count}
                 </div>
               </div>

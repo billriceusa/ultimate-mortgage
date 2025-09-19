@@ -49,63 +49,63 @@ export default function RatesPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-ui-bg">
+    <div className="min-h-screen bg-white">
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="py-20 bg-ui-bg">
+        <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-h1 font-display text-text-primary mb-6">
+            <h1 className="text-display-lg font-bold text-gray-900 mb-6">
               Today's Mortgage Rates
             </h1>
-            <p className="text-xl text-text-secondary mb-8">
+            <p className="text-xl text-gray-600 mb-8">
               Compare current rates across different loan programs. Rates updated daily.
             </p>
-            <Button variant="primary" size="large">
+            <Button variant="primary" size="lg">
               Get Your Personalized Rate
             </Button>
           </div>
         </section>
 
         {/* Rates Table */}
-        <section className="py-16 bg-ui-surface">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {todaysRates.map((rate, index) => (
                 <div
                   key={index}
-                  className={`relative bg-ui-bg rounded-lg border p-6 card-hover ${
-                    rate.popular ? 'border-brand-primary ring-2 ring-brand-primary ring-opacity-20' : 'border-ui-border'
+                  className={`relative bg-white rounded-lg border p-6 card-hover ${
+                    rate.popular ? 'border-brand-primary ring-2 ring-brand-primary ring-opacity-20' : 'border-gray-200'
                   }`}
                 >
                   {rate.popular && (
                     <div className="absolute -top-3 left-4">
-                      <span className="bg-brand-primary text-brand-onPrimary px-3 py-1 rounded-full text-small font-semibold">
+                      <span className="bg-brand-primary text-brand-onPrimary px-3 py-1 rounded-full text-sm font-semibold">
                         Most Popular
                       </span>
                     </div>
                   )}
                   
-                  <h3 className="text-xl font-semibold text-text-primary mb-4">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
                     {rate.product}
                   </h3>
                   
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <span className="text-text-muted">Rate</span>
+                      <span className="text-gray-500">Rate</span>
                       <span className="text-2xl font-bold text-brand-primary">
                         {rate.rate}
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-text-muted">APR</span>
-                      <span className="font-semibold text-text-primary">
+                      <span className="text-gray-500">APR</span>
+                      <span className="font-semibold text-gray-900">
                         {rate.apr}
                       </span>
                     </div>
-                    <div className="flex justify-between items-center pt-2 border-t border-ui-border">
-                      <span className="text-text-muted">Monthly Payment*</span>
-                      <span className="font-semibold text-text-primary">
+                    <div className="flex justify-between items-center pt-2 border-t border-gray-200">
+                      <span className="text-gray-500">Monthly Payment*</span>
+                      <span className="font-semibold text-gray-900">
                         {rate.payment}
                       </span>
                     </div>
@@ -119,10 +119,10 @@ export default function RatesPage() {
             </div>
             
             <div className="text-center mt-8">
-              <p className="text-small text-text-muted">
+              <p className="text-sm text-gray-500">
                 *Based on $400,000 loan amount with 20% down payment
               </p>
-              <button className="text-text-link hover:underline text-small mt-2">
+              <button className="text-secondary-600 hover:underline text-sm mt-2">
                 Assumptions & APR details
               </button>
             </div>
@@ -130,13 +130,13 @@ export default function RatesPage() {
         </section>
 
         {/* Rate Factors */}
-        <section className="py-16 bg-ui-bg">
+        <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-h2 font-display text-text-primary mb-4">
+              <h2 className="text-display-md font-bold text-gray-900 mb-4">
                 Factors That Affect Your Rate
               </h2>
-              <p className="text-text-secondary">
+              <p className="text-gray-600">
                 Your actual rate may vary based on these key factors
               </p>
             </div>
@@ -145,31 +145,31 @@ export default function RatesPage() {
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-brand-onPrimary font-bold text-small">1</span>
+                    <span className="text-brand-onPrimary font-bold text-sm">1</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2">Credit Score</h3>
-                    <p className="text-text-secondary">Higher credit scores typically qualify for better rates.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Credit Score</h3>
+                    <p className="text-gray-600">Higher credit scores typically qualify for better rates.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
                   <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-brand-onPrimary font-bold text-small">2</span>
+                    <span className="text-brand-onPrimary font-bold text-sm">2</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2">Down Payment</h3>
-                    <p className="text-text-secondary">Larger down payments often result in lower interest rates.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Down Payment</h3>
+                    <p className="text-gray-600">Larger down payments often result in lower interest rates.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
                   <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-brand-onPrimary font-bold text-small">3</span>
+                    <span className="text-brand-onPrimary font-bold text-sm">3</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2">Loan Term</h3>
-                    <p className="text-text-secondary">Shorter loan terms typically have lower interest rates.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Loan Term</h3>
+                    <p className="text-gray-600">Shorter loan terms typically have lower interest rates.</p>
                   </div>
                 </div>
               </div>
@@ -177,31 +177,31 @@ export default function RatesPage() {
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-brand-onPrimary font-bold text-small">4</span>
+                    <span className="text-brand-onPrimary font-bold text-sm">4</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2">Debt-to-Income Ratio</h3>
-                    <p className="text-text-secondary">Lower DTI ratios demonstrate better ability to repay.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Debt-to-Income Ratio</h3>
+                    <p className="text-gray-600">Lower DTI ratios demonstrate better ability to repay.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
                   <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-brand-onPrimary font-bold text-small">5</span>
+                    <span className="text-brand-onPrimary font-bold text-sm">5</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2">Property Type</h3>
-                    <p className="text-text-secondary">Primary residences typically get the best rates.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Property Type</h3>
+                    <p className="text-gray-600">Primary residences typically get the best rates.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
                   <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-brand-onPrimary font-bold text-small">6</span>
+                    <span className="text-brand-onPrimary font-bold text-sm">6</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2">Market Conditions</h3>
-                    <p className="text-text-secondary">Economic factors influence overall rate environment.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Market Conditions</h3>
+                    <p className="text-gray-600">Economic factors influence overall rate environment.</p>
                   </div>
                 </div>
               </div>
@@ -210,19 +210,19 @@ export default function RatesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-ui-surfaceAlt">
+        <section className="py-16 bg-gray-50Alt">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-h2 font-display text-text-primary mb-4">
+            <h2 className="text-display-md font-sans text-gray-900 mb-4">
               Get Your Actual Rate
             </h2>
-            <p className="text-text-secondary mb-8">
+            <p className="text-gray-600 mb-8">
               Rates shown are estimates. Get your personalized rate based on your specific situation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="large">
+              <Button variant="primary" size="lg">
                 Get Pre-Approved Now
               </Button>
-              <Button variant="secondary" size="large">
+              <Button variant="secondary" size="lg">
                 Calculate My Payment
               </Button>
             </div>

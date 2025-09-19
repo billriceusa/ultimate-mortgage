@@ -10,18 +10,18 @@ export function GuideDownload() {
   }
 
   return (
-    <section className="py-20 bg-ui-surfaceAlt">
+    <section className="py-20 bg-gray-50Alt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h2 className="text-h2 font-display text-text-primary">
+            <h2 className="text-display-md font-bold text-gray-900">
               Free Home Buyer's Guide
             </h2>
-            <p className="text-body text-text-secondary">
+            <p className="text-base text-gray-600">
               Download our comprehensive guide to understand the home buying process, 
               from pre-approval to closing. Get insider tips that could save you thousands.
             </p>
-            <ul className="space-y-3 text-text-secondary">
+            <ul className="space-y-3 text-gray-600">
               <li className="flex items-center">
                 <div className="w-2 h-2 bg-state-success rounded-full mr-3"></div>
                 Step-by-step home buying timeline
@@ -39,10 +39,10 @@ export function GuideDownload() {
                 Closing costs breakdown and negotiation tips
               </li>
             </ul>
-            <Button variant="primary" size="large" onClick={handleDownload}>
+            <Button variant="primary" size="lg" onClick={handleDownload}>
               Download Free Guide
             </Button>
-            <p className="text-small text-text-muted">
+            <p className="text-sm text-gray-500">
               No spam, ever. We respect your privacy.
             </p>
           </div>

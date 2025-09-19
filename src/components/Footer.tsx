@@ -10,10 +10,10 @@ export function Footer() {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
-              <div className="text-2xl font-display font-bold text-brand-primary">
+              <div className="text-2xl font-sans font-bold text-brand-primary">
                 Ultimate
               </div>
-              <div className="text-2xl font-display font-bold text-ui-bg ml-1">
+              <div className="text-2xl font-sans font-bold text-ui-bg ml-1">
                 Mortgage Brokers
               </div>
             </div>
@@ -22,11 +22,11 @@ export function Footer() {
             </p>
             <div className="space-y-3">
               <div className="text-lg font-semibold text-ui-bg">24/7 Support</div>
-              <div className="space-y-2 text-small text-gray-300">
+              <div className="space-y-2 text-sm text-gray-300">
                 <p>📞 (614) 361-7558</p>
                 <p>✉️ info@ultimatemortgage.com</p>
               </div>
-              <div className="text-small text-gray-300 pt-2">
+              <div className="text-sm text-gray-300 pt-2">
                 <p><strong>Office:</strong></p>
                 <p>3 Easton Oval, Suite 235</p>
                 <p>Columbus, OH 43219</p>
@@ -37,7 +37,7 @@ export function Footer() {
           {/* Loan Products */}
           <div>
             <h4 className="font-semibold mb-4">Loan Products</h4>
-            <ul className="space-y-2 text-small">
+            <ul className="space-y-2 text-sm">
               <li><Link href="/loan-programs/conventional" className="text-gray-300 hover:text-ui-bg transition-colors">Conventional Loan</Link></li>
               <li><Link href="/loan-programs/fha" className="text-gray-300 hover:text-ui-bg transition-colors">FHA Loan</Link></li>
               <li><Link href="/loan-programs/va" className="text-gray-300 hover:text-ui-bg transition-colors">VA Loan</Link></li>
@@ -51,7 +51,7 @@ export function Footer() {
           {/* Resource Center */}
           <div>
             <h4 className="font-semibold mb-4">Resource Center</h4>
-            <ul className="space-y-2 text-small">
+            <ul className="space-y-2 text-sm">
               <li><Link href="/calculators/payment" className="text-gray-300 hover:text-ui-bg transition-colors">Mortgage Payment Calculator</Link></li>
               <li><Link href="/calculators/affordability" className="text-gray-300 hover:text-ui-bg transition-colors">Affordability Calculator</Link></li>
               <li><Link href="/calculators/refinance" className="text-gray-300 hover:text-ui-bg transition-colors">Refinance Calculator</Link></li>
@@ -68,20 +68,20 @@ export function Footer() {
           <div className="flex flex-col lg:flex-row justify-between items-start space-y-6 lg:space-y-0">
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-8">
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-ui-bg text-text-primary rounded flex items-center justify-center text-xs font-bold">
+                <div className="w-10 h-10 bg-white text-gray-900 rounded flex items-center justify-center text-xs font-bold">
                   NMLS
                 </div>
-                <span className="text-small text-gray-300">NMLS # 2619461</span>
+                <span className="text-sm text-gray-300">NMLS # 2619461</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-ui-bg text-text-primary rounded flex items-center justify-center text-xs font-bold">
+                <div className="w-10 h-10 bg-white text-gray-900 rounded flex items-center justify-center text-xs font-bold">
                   EHL
                 </div>
-                <span className="text-small text-gray-300">Equal Housing Lender</span>
+                <span className="text-sm text-gray-300">Equal Housing Lender</span>
               </div>
             </div>
             
-            <div className="text-small text-gray-300">
+            <div className="text-sm text-gray-300">
               © {currentYear} Ultimate Mortgage Brokers. All rights reserved.
             </div>
           </div>

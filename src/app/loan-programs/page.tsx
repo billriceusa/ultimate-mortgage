@@ -59,24 +59,24 @@ export default function LoanProgramsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-ui-bg">
+    <div className="min-h-screen bg-white">
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="py-20 bg-ui-bg">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-h1 font-display text-text-primary mb-6">
+              <h1 className="text-display-lg font-bold text-gray-900 mb-6">
                 Loan Programs
               </h1>
-              <p className="text-xl text-text-secondary mb-8">
+              <p className="text-xl text-gray-600 mb-8">
                 Compare current rates across different loan programs. Find the perfect mortgage solution for your unique situation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="primary" size="large">
+                <Button variant="primary" size="lg">
                   Get Your Rate Quote
                 </Button>
-                <Button variant="secondary" size="large">
+                <Button variant="secondary" size="lg">
                   Talk to a Loan Expert
                 </Button>
               </div>
@@ -85,29 +85,29 @@ export default function LoanProgramsPage() {
         </section>
 
         {/* Traditional Loans */}
-        <section className="py-16 bg-ui-surface">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-h2 font-display text-text-primary mb-4">
+              <h2 className="text-display-md font-bold text-gray-900 mb-4">
                 Traditional Loan Programs
               </h2>
-              <p className="text-text-secondary">
+              <p className="text-gray-600">
                 Popular loan options for most homebuyers
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 gap-8">
               {traditionalLoans.map((loan) => (
-                <div key={loan.name} className="bg-ui-bg rounded-lg border border-ui-border p-8 card-hover">
-                  <h3 className="text-2xl font-semibold text-text-primary mb-4">
+                <div key={loan.name} className="bg-white rounded-lg border border-gray-200 p-8 card-hover">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                     {loan.name}
                   </h3>
-                  <p className="text-text-secondary mb-6">
+                  <p className="text-gray-600 mb-6">
                     {loan.description}
                   </p>
                   <ul className="space-y-2 mb-6">
                     {loan.features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-text-secondary">
+                      <li key={index} className="flex items-center text-gray-600">
                         <div className="w-2 h-2 bg-state-success rounded-full mr-3"></div>
                         {feature}
                       </li>
@@ -125,29 +125,29 @@ export default function LoanProgramsPage() {
         </section>
 
         {/* Specialty Loans */}
-        <section className="py-16 bg-ui-bg">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-h2 font-display text-text-primary mb-4">
+              <h2 className="text-display-md font-bold text-gray-900 mb-4">
                 Specialty Loan Programs
               </h2>
-              <p className="text-text-secondary">
+              <p className="text-gray-600">
                 Unique solutions for specific situations
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 gap-8">
               {specialtyLoans.map((loan) => (
-                <div key={loan.name} className="bg-ui-surface rounded-lg border border-ui-border p-8 card-hover">
-                  <h3 className="text-2xl font-semibold text-text-primary mb-4">
+                <div key={loan.name} className="bg-gray-50 rounded-lg border border-gray-200 p-8 card-hover">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                     {loan.name}
                   </h3>
-                  <p className="text-text-secondary mb-6">
+                  <p className="text-gray-600 mb-6">
                     {loan.description}
                   </p>
                   <ul className="space-y-2 mb-6">
                     {loan.features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-text-secondary">
+                      <li key={index} className="flex items-center text-gray-600">
                         <div className="w-2 h-2 bg-state-success rounded-full mr-3"></div>
                         {feature}
                       </li>
@@ -165,19 +165,19 @@ export default function LoanProgramsPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-ui-surfaceAlt">
+        <section className="py-16 bg-gray-50Alt">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-h2 font-display text-text-primary mb-4">
+            <h2 className="text-display-md font-sans text-gray-900 mb-4">
               Ready to get started?
             </h2>
-            <p className="text-text-secondary mb-8">
+            <p className="text-gray-600 mb-8">
               Get personalized loan recommendations and rates in minutes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="large">
+              <Button variant="primary" size="lg">
                 Apply Now
               </Button>
-              <Button variant="secondary" size="large">
+              <Button variant="secondary" size="lg">
                 Calculate Payment
               </Button>
             </div>

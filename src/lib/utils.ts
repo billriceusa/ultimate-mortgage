@@ -21,9 +21,9 @@ export const componentStyles = {
   sectionLg: 'py-20',
   
   // Typography styles
-  heading: 'font-display font-bold text-text-primary',
-  subheading: 'text-body-lg text-text-secondary',
-  caption: 'text-body-sm text-text-muted',
+  heading: 'font-sans font-bold text-gray-900',
+  subheading: 'text-lg text-gray-600',
+  caption: 'text-sm text-gray-500',
   
   // Layout styles
   grid: 'grid gap-8',

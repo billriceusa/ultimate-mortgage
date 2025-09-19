@@ -48,27 +48,27 @@ export default function OurTeamPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-ui-bg">
+    <div className="min-h-screen bg-white">
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="py-20 bg-ui-bg">
+        <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-h1 font-display text-text-primary mb-6">
+            <h1 className="text-display-lg font-bold text-gray-900 mb-6">
               Our Expert Team
             </h1>
-            <p className="text-xl text-text-secondary mb-8">
+            <p className="text-xl text-gray-600 mb-8">
               Meet our licensed mortgage professionals dedicated to helping you achieve your homeownership goals.
             </p>
           </div>
         </section>
 
         {/* Team Grid */}
-        <section className="py-16 bg-ui-surface">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               {teamMembers.map((member, index) => (
-                <div key={index} className="bg-ui-bg rounded-lg border border-ui-border p-8 card-hover">
+                <div key={index} className="bg-white rounded-lg border border-gray-200 p-8 card-hover">
                   <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex-shrink-0">
                       <div className="w-32 h-32 relative rounded-lg overflow-hidden">
@@ -82,20 +82,20 @@ export default function OurTeamPage() {
                     </div>
                     
                     <div className="flex-grow">
-                      <h3 className="text-2xl font-semibold text-text-primary mb-2">
+                      <h3 className="text-2xl font-semibold text-gray-900 mb-2">
                         {member.name}
                       </h3>
-                      <p className="text-text-secondary mb-1">{member.title}</p>
-                      <p className="text-small text-text-muted mb-2">{member.nmls}</p>
-                      <p className="text-text-secondary mb-4">{member.location}</p>
+                      <p className="text-gray-600 mb-1">{member.title}</p>
+                      <p className="text-sm text-gray-500 mb-2">{member.nmls}</p>
+                      <p className="text-gray-600 mb-4">{member.location}</p>
                       
                       <div className="mb-4">
-                        <p className="text-small font-semibold text-text-primary mb-2">Specialties:</p>
+                        <p className="text-sm font-semibold text-gray-900 mb-2">Specialties:</p>
                         <div className="flex flex-wrap gap-2">
                           {member.specialties.map((specialty, idx) => (
                             <span
                               key={idx}
-                              className="bg-ui-surfaceAlt text-text-secondary px-3 py-1 rounded-full text-small"
+                              className="bg-gray-50Alt text-gray-600 px-3 py-1 rounded-full text-sm"
                             >
                               {specialty}
                             </span>
@@ -104,25 +104,25 @@ export default function OurTeamPage() {
                       </div>
                       
                       <div className="space-y-2 mb-6">
-                        <div className="flex items-center text-text-secondary">
+                        <div className="flex items-center text-gray-600">
                           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                           </svg>
-                          <span className="text-small">{member.phone}</span>
+                          <span className="text-sm">{member.phone}</span>
                         </div>
-                        <div className="flex items-center text-text-secondary">
+                        <div className="flex items-center text-gray-600">
                           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
-                          <span className="text-small">{member.email}</span>
+                          <span className="text-sm">{member.email}</span>
                         </div>
                       </div>
                       
                       <div className="flex flex-col sm:flex-row gap-3">
-                        <Button variant="primary" size="medium" className="flex-1">
+                        <Button variant="primary" size="md" className="flex-1">
                           Contact {member.name.split(' ')[0]}
                         </Button>
-                        <Button variant="secondary" size="medium" className="flex-1">
+                        <Button variant="secondary" size="md" className="flex-1">
                           Get My Rate
                         </Button>
                       </div>
@@ -135,13 +135,13 @@ export default function OurTeamPage() {
         </section>
 
         {/* Company Values */}
-        <section className="py-16 bg-ui-bg">
+        <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-h2 font-display text-text-primary mb-4">
+              <h2 className="text-display-md font-bold text-gray-900 mb-4">
                 Why Choose Ultimate Mortgage
               </h2>
-              <p className="text-text-secondary">
+              <p className="text-gray-600">
                 We work for you, not the bank. Here's what sets us apart.
               </p>
             </div>
@@ -155,8 +155,8 @@ export default function OurTeamPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2">Lightning-Fast Process</h3>
-                    <p className="text-text-secondary">Get pre-approved in minutes, not days. Our streamlined process saves you time.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Lightning-Fast Process</h3>
+                    <p className="text-gray-600">Get pre-approved in minutes, not days. Our streamlined process saves you time.</p>
                   </div>
                 </div>
                 
@@ -167,8 +167,8 @@ export default function OurTeamPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2">Expert Guidance</h3>
-                    <p className="text-text-secondary">Licensed professionals with years of experience guide you through every step.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Expert Guidance</h3>
+                    <p className="text-gray-600">Licensed professionals with years of experience guide you through every step.</p>
                   </div>
                 </div>
               </div>
@@ -181,8 +181,8 @@ export default function OurTeamPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2">Competitive Rates</h3>
-                    <p className="text-text-secondary">Access to multiple lenders means we find you the best rates and terms available.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Competitive Rates</h3>
+                    <p className="text-gray-600">Access to multiple lenders means we find you the best rates and terms available.</p>
                   </div>
                 </div>
                 
@@ -193,8 +193,8 @@ export default function OurTeamPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2">Transparent Process</h3>
-                    <p className="text-text-secondary">No hidden fees or surprises. You'll know exactly what to expect from day one.</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Transparent Process</h3>
+                    <p className="text-gray-600">No hidden fees or surprises. You'll know exactly what to expect from day one.</p>
                   </div>
                 </div>
               </div>
@@ -203,19 +203,19 @@ export default function OurTeamPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-ui-surfaceAlt">
+        <section className="py-16 bg-gray-50Alt">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-h2 font-display text-text-primary mb-4">
+            <h2 className="text-display-md font-sans text-gray-900 mb-4">
               Ready to work with our team?
             </h2>
-            <p className="text-text-secondary mb-8">
+            <p className="text-gray-600 mb-8">
               Connect with one of our mortgage experts today and experience the Ultimate difference.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="large">
+              <Button variant="primary" size="lg">
                 Get Started Today
               </Button>
-              <Button variant="secondary" size="large">
+              <Button variant="secondary" size="lg">
                 Schedule a Call
               </Button>
             </div>

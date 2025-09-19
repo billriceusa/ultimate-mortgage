@@ -29,13 +29,13 @@ export function ValueProps() {
   ]
 
   return (
-    <section className="py-20 bg-ui-bg">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-h2 font-display text-text-primary mb-4">
+          <h2 className="text-display-md font-bold text-gray-900 mb-4">
             Why choose Ultimate Mortgage
           </h2>
-          <p className="text-body text-text-secondary max-w-2xl mx-auto">
+          <p className="text-base text-gray-600 max-w-2xl mx-auto">
             We're different from other lenders. Here's how we make your mortgage experience better.
           </p>
         </div>
@@ -51,10 +51,10 @@ export function ValueProps() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-text-primary mb-3">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {prop.title}
               </h3>
-              <p className="text-text-secondary">
+              <p className="text-gray-600">
                 {prop.description}
               </p>
             </div>

@@ -53,59 +53,77 @@ npm start
 ```
 src/
 ├── app/
-│   ├── globals.css          # Global styles and CSS variables
+│   ├── globals.css          # Design system base styles
 │   ├── layout.tsx           # Root layout with metadata
-│   └── page.tsx             # Homepage
+│   ├── page.tsx             # Homepage
+│   ├── loan-programs/       # Loan program pages
+│   ├── our-team/           # Team member pages
+│   └── rates/              # Rate information pages
 ├── components/
-│   ├── ui/
-│   │   └── Button.tsx       # Reusable button component
-│   ├── Hero.tsx             # Homepage hero section
-│   ├── RateProofRow.tsx     # Rate cards display
-│   ├── CalculatorPreview.tsx # Payment calculator preview
-│   ├── ValueProps.tsx       # Value proposition cards
-│   ├── CredibilityStrip.tsx # Reviews and press logos
-│   ├── GuideDownload.tsx    # Lead magnet section
-│   └── Footer.tsx           # Footer with compliance
-└── lib/                     # Utility functions
+│   ├── ui/                 # Design system components
+│   │   ├── Button.tsx      # Button with 4 variants
+│   │   ├── Input.tsx       # Form input with validation
+│   │   ├── Select.tsx      # Dropdown component
+│   │   ├── Card.tsx        # Card system with sub-components
+│   │   ├── ProgressBar.tsx # Progress indicators
+│   │   └── index.ts        # Component exports
+│   ├── Header.tsx          # Navigation with dropdowns
+│   ├── Footer.tsx          # Footer with compliance
+│   ├── Hero.tsx            # Homepage hero section
+│   ├── RateProofRow.tsx    # Rate cards display
+│   ├── CalculatorPreview.tsx # Payment calculator
+│   ├── ValueProps.tsx      # Value proposition cards
+│   ├── CredibilityStrip.tsx # Reviews and testimonials
+│   └── GuideDownload.tsx   # Lead capture section
+├── lib/
+│   └── utils.ts            # Utility functions
+└── docs/
+    ├── design-system-v2.md # Complete design system docs
+    └── design-system-implementation.md # Implementation log
 ```
 
-## Design System
+## Design System v2
 
-The project uses a custom design system based on the VT1 Credibility-First Minimalism approach:
+Comprehensive design system inspired by industry leaders like Rocket.com and Lower.com:
 
-### Colors
-- **Primary:** #C60904 (Ultimate Red)
-- **Secondary:** #3982BB (Trust Blue)
-- **Background:** #FFFFFF (Clean White)
-- **Text:** #000000, #333333, #6B7280
+### Design Tokens
+- **Colors:** Primary red (#C60904), Trust blue (#3982BB), Gray scale (50-900)
+- **Typography:** Inter font family with responsive display headings
+- **Spacing:** 8px base unit system for consistent layouts
+- **Shadows:** Subtle elevation system for depth
 
-### Typography
-- **Display:** Arboria (headings)
-- **Body:** Montserrat (body text)
-- **Accent:** Filmotype Lucky (decorative)
+### Component Library
+- **Button:** 4 variants (primary, secondary, tertiary, ghost) × 3 sizes
+- **Input/Select:** Form components with validation and accessibility
+- **Card:** Flexible card system with headers, content, footers
+- **ProgressBar:** Multi-step forms and loading indicators
 
-### Components
-- Responsive button variants (primary, secondary, tertiary)
-- Card components with hover effects
-- Modal overlays for calculator expansion
-- Compliance footer blocks
+### Key Features
+- **Consistent:** All components use standardized design tokens
+- **Accessible:** WCAG 2.1 AA compliant focus states and colors
+- **Scalable:** Easy to extend with new components
+- **Type-safe:** Full TypeScript support with proper interfaces
 
-## Key Features
+## Current Implementation
 
-### Homepage Sections
-1. **Hero** - Main value proposition with CTAs
-2. **Rate Proof Row** - Current rate cards
-3. **Calculator Preview** - Payment calculator with modal
-4. **Value Props** - Why choose Ultimate Mortgage
-5. **Credibility Strip** - Reviews and press mentions
-6. **Guide Download** - Lead capture with free resource
-7. **Footer** - Compliance and navigation
+### Pages & Components
+- ✅ **Homepage** - Hero, rates, calculator, value props, testimonials
+- ✅ **Loan Programs** - Traditional and specialty loan overviews
+- ✅ **Our Team** - Team member profiles with NMLS info
+- ✅ **Rates** - Current rates with detailed explanations
+- ✅ **Navigation** - Professional header with dropdowns
+- ✅ **Footer** - Compliance and legal information
 
-### Integrations (Planned)
-- **MortgageMate** calculators (iframe embeds)
-- **BankingBridge** rate feeds
-- **CRM/LOS** lead routing
-- **Chat/Voice** support system
+### Design System Status
+- ✅ **Component Library** - Button, Input, Select, Card, ProgressBar
+- ✅ **Design Tokens** - Colors, typography, spacing standardized
+- ✅ **Accessibility** - Focus states, color contrast, keyboard navigation
+- ✅ **Responsive** - Mobile-first design across all components
+
+### Next Phase: Lead Capture Funnel
+- 🔄 **5-step application flow** using new form components
+- 🔄 **Session persistence** and progress tracking
+- 🔄 **Modal system** for desktop/mobile experiences
 
 ## Compliance
 

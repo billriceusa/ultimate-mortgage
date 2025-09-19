@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* Font Variables */
-    --font-display: 'Inter', system-ui, sans-serif;
-    --font-body: 'Inter', system-ui, sans-serif;
-    --font-accent: 'Inter', system-ui, sans-serif;
+    /* Design Tokens */
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   html {
@@ -18,61 +17,115 @@
   }
 
   body {
-    @apply font-body text-text-primary bg-ui-bg;
+    @apply font-sans text-gray-900 bg-white;
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 
-  /* Typography */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold text-text-primary;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
-  }
-
+  /* Typography Hierarchy */
   h1 {
-    @apply text-display-xl;
+    @apply text-display-xl font-bold text-gray-900 tracking-tight;
   }
 
   h2 {
-    @apply text-display-lg;
+    @apply text-display-lg font-bold text-gray-900 tracking-tight;
   }
 
   h3 {
-    @apply text-display-md;
+    @apply text-display-md font-semibold text-gray-900 tracking-tight;
+  }
+
+  h4 {
+    @apply text-display-sm font-semibold text-gray-900;
+  }
+
+  h5 {
+    @apply text-xl font-semibold text-gray-900;
+  }
+
+  h6 {
+    @apply text-lg font-semibold text-gray-900;
   }
 
   p {
-    @apply text-body-base text-text-secondary;
+    @apply text-base text-gray-600 leading-relaxed;
+  }
+
+  /* Links */
+  a {
+    @apply text-secondary-600 hover:text-secondary-700 transition-colors duration-150;
   }
 
   /* Focus styles for accessibility */
   *:focus-visible {
-    @apply outline-none ring-2 ring-brand-secondary ring-offset-2;
+    @apply outline-none ring-2 ring-secondary-500 ring-offset-2;
   }
 
   /* Remove default button styles */
   button {
     @apply focus:outline-none;
   }
+
+  /* Form elements */
+  input, textarea, select {
+    @apply focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500;
+  }
 }
 
 @layer components {
-  /* Card hover effects */
-  .card-hover {
-    @apply transition-all duration-300 ease-smooth;
+  /* Card Components */
+  .card {
+    @apply bg-white rounded-lg border border-gray-200 shadow-sm;
   }
   
-  .card-hover:hover {
-    @apply shadow-hover -translate-y-1;
+  .card-hover {
+    @apply transition-all duration-300 ease-smooth hover:shadow-lg hover:-translate-y-0.5;
   }
 
-  /* Smooth transitions */
-  .transition-smooth {
-    @apply transition-all duration-300 ease-smooth;
+  .card-interactive {
+    @apply card card-hover cursor-pointer;
   }
 
-  /* Text utilities */
+  /* Button Base Styles */
+  .btn {
+    @apply inline-flex items-center justify-center font-medium transition-all duration-150 ease-smooth focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-sm {
+    @apply h-8 px-3 text-sm rounded-md;
+  }
+
+  .btn-md {
+    @apply h-11 px-4 text-base rounded-lg;
+  }
+
+  .btn-lg {
+    @apply h-12 px-6 text-lg rounded-lg;
+  }
+
+  /* Form Components */
+  .form-input {
+    @apply block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 sm:text-sm;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .form-error {
+    @apply mt-1 text-sm text-error-600;
+  }
+
+  /* Utility Classes */
   .text-balance {
     text-wrap: balance;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-20;
   }
 }
 
@@ -92,5 +145,45 @@
   
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {
     @apply bg-gray-400;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 300ms var(--ease-smooth);
+  }
+
+  .animate-slide-up {
+    animation: slideUp 300ms var(--ease-smooth);
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 200ms var(--ease-smooth);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      transform: translateY(10px); 
+      opacity: 0; 
+    }
+    to { 
+      transform: translateY(0); 
+      opacity: 1; 
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      transform: scale(0.95); 
+      opacity: 0; 
+    }
+    to { 
+      transform: scale(1); 
+      opacity: 1; 
+    }
   }
 }

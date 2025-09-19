@@ -7,15 +7,15 @@ export function CalculatorPreview() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
-    <section className="py-16 bg-ui-surfaceAlt">
+    <section className="py-16 bg-gray-50Alt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-ui-surface rounded-md shadow-md p-8">
+          <div className="bg-gray-50 rounded-md shadow-md p-8">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-h3 font-display text-text-primary">
+              <h3 className="text-2xl font-sans text-gray-900">
                 Payment Calculator
               </h3>
-              <span className="text-small text-text-muted">
+              <span className="text-sm text-gray-500">
                 Estimates only
               </span>
             </div>
@@ -25,34 +25,34 @@ export function CalculatorPreview() {
                 <div className="text-4xl font-bold text-brand-primary mb-2">
                   $2,847
                 </div>
-                <div className="text-text-muted text-small">
+                <div className="text-gray-500 text-sm">
                   Monthly Payment (PITI)
                 </div>
               </div>
               
-              <div className="grid grid-cols-4 gap-4 mt-4 text-center text-small">
+              <div className="grid grid-cols-4 gap-4 mt-4 text-center text-sm">
                 <div>
                   <div className="font-semibold">$1,847</div>
-                  <div className="text-text-muted">P&I</div>
+                  <div className="text-gray-500">P&I</div>
                 </div>
                 <div>
                   <div className="font-semibold">$650</div>
-                  <div className="text-text-muted">Tax</div>
+                  <div className="text-gray-500">Tax</div>
                 </div>
                 <div>
                   <div className="font-semibold">$250</div>
-                  <div className="text-text-muted">Insurance</div>
+                  <div className="text-gray-500">Insurance</div>
                 </div>
                 <div>
                   <div className="font-semibold">$100</div>
-                  <div className="text-text-muted">PMI</div>
+                  <div className="text-gray-500">PMI</div>
                 </div>
               </div>
             </div>
             
             <div className="space-y-4 mb-6">
               <div>
-                <label className="block text-text-secondary mb-2">
+                <label className="block text-gray-600 mb-2">
                   Down Payment: 10%
                 </label>
                 <input
@@ -64,7 +64,7 @@ export function CalculatorPreview() {
                 />
               </div>
               <div>
-                <label className="block text-text-secondary mb-2">
+                <label className="block text-gray-600 mb-2">
                   Interest Rate: 6.875%
                 </label>
                 <input
@@ -92,9 +92,9 @@ export function CalculatorPreview() {
       {/* Modal placeholder - would implement full modal in production */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-ui-surface rounded-md p-8 max-w-md mx-4">
-            <h3 className="text-h3 mb-4">Full Calculator</h3>
-            <p className="text-text-secondary mb-6">
+          <div className="bg-gray-50 rounded-md p-8 max-w-md mx-4">
+            <h3 className="text-2xl mb-4">Full Calculator</h3>
+            <p className="text-gray-600 mb-6">
               This would open the full MortgageMate calculator embed.
             </p>
             <Button onClick={() => setIsModalOpen(false)}>

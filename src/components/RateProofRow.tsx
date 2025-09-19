@@ -7,13 +7,13 @@ export function RateProofRow() {
   ]
 
   return (
-    <section className="py-16 bg-ui-surface">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-h2 font-display text-text-primary mb-4">
+          <h2 className="text-display-md font-bold text-gray-900 mb-4">
             Today's rates
           </h2>
-          <p className="text-body text-text-secondary">
+          <p className="text-base text-gray-600">
             See what you could qualify for
           </p>
         </div>
@@ -22,20 +22,20 @@ export function RateProofRow() {
           {rateCards.map((card, index) => (
             <div
               key={index}
-              className="bg-ui-surface border border-ui-border rounded-md p-6 card-hover"
+              className="bg-gray-50 border border-gray-200 rounded-md p-6 card-hover"
             >
-              <h3 className="font-semibold text-text-primary mb-3">
+              <h3 className="font-semibold text-gray-900 mb-3">
                 {card.product}
               </h3>
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <span className="text-text-muted">Rate:</span>
+                  <span className="text-gray-500">Rate:</span>
                   <span className="font-semibold text-brand-primary">
                     {card.rate}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-text-muted">APR:</span>
+                  <span className="text-gray-500">APR:</span>
                   <span className="font-semibold">
                     {card.apr}
                   </span>
@@ -48,7 +48,7 @@ export function RateProofRow() {
         <div className="text-center">
           <a 
             href="#assumptions" 
-            className="text-text-link hover:underline text-small"
+            className="text-secondary-600 hover:underline text-sm"
           >
             Assumptions & APR details
           </a>
